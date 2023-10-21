@@ -1,19 +1,53 @@
 @charset "utf-8";
 
+/* floatを付けると、要素がfloatが付けられた要素を避けるように */
+/* 配置される */
+/* デフォルトでnone */
+/* 指定できる値は、left / right / inline-start / inline-end */
+/* 連続した要素にfloatが付けられていると、横に並ぶ */
+
+/* floatが付けられた要素を避けるように配置せず、新しい行として配置したい */
+/* 要素がある場合、その要素にはclearを付ける。 */
+/* デフォルトでnone */
+/* 指定できる値は、left、right、both */
+
+/* div要素はデフォルトでブロック要素 */
+
+/* box-sizingプロパティの値はデフォルトでcontent-box */
+/* box-sizingプロパティの値をcontent-boxとすると、 */
+/* paddingとborderがwidthとheightに含まれなくなる。 */
+/* box-sizingプロパティの値をborder-boxとすると、 */
+/* paddingとborderがwidthとheightに含まれるようになる。 */
+
+body * {
+  box-sizing: border-box;
+}
+
+#redBlue {
+  display: block;
+}
+
 #red {
   width: 300px;
   height: 300px;
   background-color: #ff6666;
+  float: left;
+}
+
+p {
+  margin: 0;
 }
 
 #blue {
   width: 300px;
   height: 300px;
   background-color: #0000ff;
+  float: left;
 }
 
 #green {
   width: 300px;
   height: 300px;
   background-color: #3cb371;
+  clear: left;
 }
